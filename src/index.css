@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -5,17 +11,42 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --mw: 1280px;
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  background: linear-gradient(180deg, #f5f5f5 0%, #ffffff 100%);
+  color: #333;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10vh 0;
+  text-align: left;
+  padding: 0 2rem;
+}
+
+.mw-section {
+  max-width: var(--mw);
+  width: 100%;
 }
