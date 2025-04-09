@@ -173,7 +173,7 @@ const Calendar: React.FC = () => {
         new Set(
           transformedData.map((item) => parseInt(item.date.substring(0, 4)))
         )
-      ).sort((a, b) => b - a); // Sort descending (newest first)
+      ).sort((a, b) => a - b);
 
       // Extract unique incident types
       const uniqueTypes = Array.from(
