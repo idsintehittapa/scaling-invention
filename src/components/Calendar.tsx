@@ -3,7 +3,7 @@ import { GET_INCIDENTS } from "../queries/queries";
 import { IncidentsData, CalendarValue } from "../types/types";
 import "react-calendar-heatmap/dist/styles.css";
 import CalendarHeatmap from "react-calendar-heatmap";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useMemo } from "react";
 
 import "./calendar.css";
 
@@ -13,6 +13,11 @@ const YearCalendar: React.FC<{ year: number; data: CalendarValue[] }> = ({
   data,
 }) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
+
+  const filteredData = useMemo(
+    () => data.filter((d) => d.date.startsWith(`${year}`)),
+    [data, year]
+  );
 
   useEffect(() => {
     // Fix for January label
@@ -70,7 +75,7 @@ const YearCalendar: React.FC<{ year: number; data: CalendarValue[] }> = ({
       <CalendarHeatmap
         startDate={new Date(`${year}-01-01`)}
         endDate={new Date(`${year}-12-31`)}
-        values={data.filter((d) => d.date.startsWith(`${year}`))}
+        values={filteredData}
         classForValue={(value) => {
           if (!value || value.count === 0) return "color-empty";
 
