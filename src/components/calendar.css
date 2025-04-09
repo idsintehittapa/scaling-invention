@@ -22,27 +22,6 @@
   fill: #333;
 }
 
-/* Color scale */
-.react-calendar-heatmap .color-empty {
-  fill: #ebedf0;
-}
-
-.react-calendar-heatmap .color-scale-1 {
-  fill: #c6dbef;
-}
-
-.react-calendar-heatmap .color-scale-2 {
-  fill: #9ecae1;
-}
-
-.react-calendar-heatmap .color-scale-3 {
-  fill: #4292c6;
-}
-
-.react-calendar-heatmap .color-scale-4 {
-  fill: #084594;
-}
-
 .calendar-legend {
   display: flex;
   flex-wrap: wrap;
@@ -54,36 +33,15 @@
 .legend-item {
   display: flex;
   align-items: center;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .legend-color {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   margin-right: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 2px;
-}
-
-/* Match the colors from your calendar */
-.legend-color.color-empty {
-  background-color: #ebedf0;
-}
-
-.legend-color.color-scale-1 {
-  background-color: #c6dbef; /* Use your chosen color scheme */
-}
-
-.legend-color.color-scale-2 {
-  background-color: #9ecae1;
-}
-
-.legend-color.color-scale-3 {
-  background-color: #4292c6;
-}
-
-.legend-color.color-scale-4 {
-  background-color: #084594;
 }
 
 /* Dots container for animation */
@@ -102,18 +60,74 @@
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
+.react-calendar-heatmap .color-type-shooting-level-1,
+.legend-color.color-type-shooting-level-1 {
+  fill: var(--shooting-color-1);
+  background-color: var(--shooting-color-1);
+}
 
+.react-calendar-heatmap .color-type-shooting-level-2,
+.legend-color.color-type-shooting-level-2 {
+  fill: var(--shooting-color-2);
+  background-color: var(--shooting-color-2);
+}
+
+.react-calendar-heatmap .color-type-shooting-level-3,
+.legend-color.color-type-shooting-level-3 {
+  fill: var(--shooting-color-3);
+  background-color: var(--shooting-color-3);
+}
+
+.react-calendar-heatmap .color-type-shooting-level-4,
+.legend-color.color-type-shooting-level-4 {
+  fill: var(--shooting-color-4);
+  background-color: var(--shooting-color-4);
+}
+
+/* Type-specific colors - explosion */
+.react-calendar-heatmap .color-type-explosion-level-1,
+.legend-color.color-type-explosion-level-1 {
+  fill: var(--explosion-color-1);
+  background-color: var(--explosion-color-1);
+}
+
+.react-calendar-heatmap .color-type-explosion-level-2,
+.legend-color.color-type-explosion-level-2 {
+  fill: var(--explosion-color-2);
+  background-color: var(--explosion-color-2);
+}
+
+.react-calendar-heatmap .color-type-explosion-level-3,
+.legend-color.color-type-explosion-level-3 {
+  fill: var(--explosion-color-3);
+  background-color: var(--explosion-color-3);
+}
+
+.react-calendar-heatmap .color-type-explosion-level-4,
+.legend-color.color-type-explosion-level-4 {
+  fill: var(--explosion-color-4);
+  background-color: var(--explosion-color-4);
+}
+
+/* Event dot colors - use the full opacity base colors */
 .event-type-shooting {
-  background-color: #e34c26; /* Red */
+  background-color: var(--shooting-base);
 }
 
 .event-type-explosion {
-  background-color: #563d7c; /* Purple */
+  background-color: var(--explosion-base);
 }
 
-/* Default color for any other types that might appear */
-.event-dot:not(.event-type-shooting):not(.event-type-explosion) {
-  background-color: #40c463; /* Green fallback */
+/* Mixed types indicators */
+.react-calendar-heatmap .mixed-types {
+  stroke: #000;
+  stroke-width: 1px;
+  stroke-dasharray: 2;
+}
+
+/* Legend-specific mixed types style */
+.legend-color.mixed-types {
+  border: 1px dashed #000;
 }
 
 /* Mobile responsiveness */

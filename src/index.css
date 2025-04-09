@@ -12,6 +12,17 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --mw: 1280px;
+  --shooting-base: #e34c26;
+  --explosion-base: #563d7c;
+  --shooting-color-1: rgba(227, 76, 38, 0.4);
+  --shooting-color-2: rgba(227, 76, 38, 0.6);
+  --shooting-color-3: rgba(227, 76, 38, 0.8);
+  --shooting-color-4: rgba(227, 76, 38, 1);
+
+  --explosion-color-1: rgba(86, 61, 124, 0.4);
+  --explosion-color-2: rgba(86, 61, 124, 0.6);
+  --explosion-color-3: rgba(86, 61, 124, 0.8);
+  --explosion-color-4: rgba(86, 61, 124, 1);
 }
 
 body {
